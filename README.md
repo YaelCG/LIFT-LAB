@@ -10,5 +10,3 @@ GitHub is a cloud-based platform that helps developers store, manage, and share 
 
 It is widely used for hosting open-source projects and private repositories, and it integrates with various tools for automation, continuous integration, and deployment. Features like pull requests, code reviews, and project management tools make GitHub a central hub for software development teams.
 
-
-This . Please go to www.github.com and make a free account.
