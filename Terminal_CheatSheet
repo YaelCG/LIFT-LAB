@@ -1,40 +1,47 @@
+# ---------------------------------------
 # Terminal Cheat Sheet
-pwd         # print working directory
-ls          # list files in directory
-cd          # change directory
-~           # home directory
-..          # up one directory
--           # previous working directory
-help        # get help
--h          # get help
---help      # get help
-man         # manual
-cat         # output the contents of a file
-mkdir       # create new directory
-open        # open a file with the associated program, a directory with Finder, or a URL with the default web browser
-ps          # list all running processes
-kill        # terminate existing process
-rmd         # permanently delete file
-rmdir       # remove directory
-## Working with Git
-### Quick Start
-git clone <url> 					# Clone directory
-git checkout -b <new-branch> 		# Create new local branch
-git push -u origin <new-branch> 	# Sync local branch with remote
-git checkout <branch> 				# Checkout branch
-git push origin <branch> 			# Push branch to remote
-git branch -d <branchname>   	# deletes local branch
-git push origin :<branchname>	# deletes remote branch
+# ---------------------------------------
+
+## Navigating Commands ------------------
+pwd                     # print working directory
+ls                      # list files in directory
+ls <directory_name>     # list contents of specified directory
+cd                      # change directory
+cd <directory_name>     # change to a new directory
+open                    # open a file (analogous to double clicking)
+~                       # home directory
+..                      # up one directory
+-                       # previous working directory
+help, -h                # get help
+
+## File Manipulation Commands ----------
+mkdir <directory_name>  # Create new directory
+touch <filename>        # Create a new file
+rm <filename>           # permanently delete file
+rmdir <directory_name>  # remove directory
+cat <filename>          # output the contents of a file
+nano <filename>         # Edit file contents
+vim <filename>          # Edit file contents
+ps                      # list all running processes
+kill                    # terminate existing process
+
+## Working with Git --------------------
+git clone <url> 				                      	# Clone directory
+git checkout -b <new-branch> 	                	# Create new local branch
+git push -u origin <new-branch>               	# Sync local branch with remote
+git checkout <branch> 			                  	# Checkout branch
+git push origin <branch> 		            	      # Push branch to remote
+git branch -d <branchname>                     	# deletes local branch
+git push origin :<branchname>	                  # deletes remote branch
 git subtree push --prefix docs origin gh-pages  # push docs as subtree to gh-pages
-### Clone Directory
-git clone <url>
-### Create Project
+
+### Create Project ---------------------
 cd project/
 git init                    # initializes the repository
-git add .                   # add those 'unknown' files
+git add .                   # add all files in the directory
 git commit                  # commit all changes, edit changelog entry
-git rm --cached <file>...   # ridiculously complicated command to undo, in case you forgot .gitignore
-### Branching and Merging
+
+### Branching and Merging --------------
 git branch                          # show list of all branches (* is active)
 git checkout -b linux-work          # create a new branch named "linux-work"
 <make changes>
@@ -65,7 +72,8 @@ git commit -a -m "commit message"
 git format-patch HEAD^  # creates 0001-commit-message.txt
                         # (HEAD^ means every patch since one revision before the
                         # tip of the branch, also known as HEAD)
-### Inspecting Revisions
+
+### Inspecting Revisions ------
 # inspect history visually
 gitk    # this opens a Tk window, and shows you how the revisions are connected
 # inspect history
@@ -74,7 +82,7 @@ git log -p  # ditto, but append a patch after each commit message
 # inspect a specific commit
 git show HEAD   # show commit info, diffstat and patch
                 # of the tip of the current branch
-### Referring to Revisions
+### Referring to Revisions ----
 # by name
 git log v1.0.0  # show history leading up to tag "v1.0.0"
 git log master  # show history of branch "master"
